@@ -1,4 +1,4 @@
-package com.example.demo.service.config;
+package com.example.demo.security.config;
 
 import com.example.demo.appuser.AppUserService;
 import lombok.AllArgsConstructor;
@@ -24,8 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                    .antMatchers("/api/v*/registration/**")
-                    .permitAll()
+                .antMatchers("/api/v*/registration/**")
+                .permitAll()
                 .anyRequest()
                 .authenticated().and()
                 .formLogin();
